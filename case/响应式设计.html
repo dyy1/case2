@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>响应式设计初探</title>
+		<style type="text/css">
+			*{margin:0;padding:0;}
+			body{font:18px/2em arial;}
+			.cleatfix:after{
+				/*content: '200B'; /*零宽度空格，占位
+				clear: both;
+				display:block;
+				height: 0;
+				font-size: 0;*/
+				
+				content: '.';
+				clear: both;
+				visibility: hidden;  /*元素不可见*/
+				height: 0;
+				display: block;
+			}
+			.cleatfix{*zoom: 1;}
+		
+			header,section,article,aside,footer{display: block;}
+			.wrap{width: 970px;margin: 20px auto;padding: 5px;}
+			.wrap,header,article,aside,footer{border:1px solid #ccc;padding: 5px;}
+			header{margin-bottom: 5px;height: 190px;}
+			article{width: 610px;float: left;background-color: #f8f8f8;}
+			aside{width: 310px;float: right;background-color: #f0efef;}
+			footer{margin-top: 5px;height: 76px;}
+			
+			@media screen and (max-width:980px){
+				.wrap{width:96%;}
+				article{width:62%;}
+				aside{width:31%;}
+			}
+			@media screen and (max-width:900px){
+				header{background-color: pink;}
+			}
+			@media screen and (max-width:700px){
+				article{width:auto;float: none;}
+				aside{width:auto;float: none;margin-top: 5px;}
+			}
+			@media screen and (max-width:600px){
+				header{background-color: #fff};
+			}
+			@media screen and (max-width:480px){
+				header{height: auto; }
+				aside{display: none;}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrap">
+			<header><h2>Header</h2></header>
+			<section class="cleatfix">
+				<article>
+					<h3>Content</h3>
+					<p>Text</p>
+					<p>Text</p>
+					<p>Text</p>
+					<p>Text</p>
+					<p>Text</p>
+					<p>Text</p>
+					<p>Text</p>
+					<p>Text</p>
+					<p>Text</p>
+					<p>Text</p>
+					<p>Text</p>
+				</article>
+				<aside>
+					<h3>Sidebar</h3>
+					<p>Text</p>
+					<p>Text</p>
+				</aside>
+				
+			</section>
+			<footer>Footer</footer>
+		</div>
+	</body>
+</html>

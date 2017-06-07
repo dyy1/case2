@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			@keyframes run{
+				0%{top:0;left:0}
+				25%{top:0;left: 180px;background-color:red;}
+				50%{top:180px;left: 180px;background-color: pink}
+				75%{top:180px;left: 0;background-color: green}
+				100%{top:0;left:0}
+			}
+			.box{
+				width:200px;
+				height: 200px;
+				border:1px solid red;
+				border-radius: 10px;
+				margin: 100px auto ;
+				position: relative;
+			}
+			.box:before{
+				content: '';
+				width:20px;
+				height: 20px;
+				background: #000;
+				position: absolute;
+				top:0;
+				left: 0;
+				border-radius: 50%;
+				animation: run 3s infinite;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			
+		</div>
+	</body>
+</html>

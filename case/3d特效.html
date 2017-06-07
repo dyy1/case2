@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{margin:0;padding:0;}
+			@-webkit-keyframes run{
+				from{transform: rotateX(0deg) rotateY(0deg);}
+				to{transform: rotateX(360deg) rotateY(360deg);}
+			}
+			ul{
+				list-style: none;
+				width:200px;
+				height:200px;
+				margin: 100px auto;
+				/*创建三维场景*/
+				-webkit-transform-style: preserve-3d;
+				/*会有透视，景深的效果
+				-webkit-perspective: 400px;*/
+				/*用户的视点，在屏幕的正中央*/
+				-webkit-perspective-origin:50% 50%;
+				position: relative;
+				animation: run 10s infinite;
+			}
+			li{
+				width: 200px;
+				height: 200px;
+				position: absolute;
+				left:0;
+				top:0;
+				font-size: 50px;
+				color: #fff;
+				text-align: center;
+				line-height: 200px;
+			}
+			li:nth-child(1){
+				background-color: rgba(0,0,0,0.5);
+				transform: rotateX(90deg) translateZ(100px);
+			}
+			li:nth-child(2){
+				background-color:#008000;
+				transform: rotateX(270deg) translateZ(100px);
+			}
+			li:nth-child(3){
+				background: #00F3FF;
+				transform: rotateY(90deg) translateZ(100px);
+			}
+			li:nth-child(4){
+				background:#4361C3;
+				transform: rotateY(270deg) translateZ(100px);
+			}
+			li:nth-child(5){
+				background: pink;
+				transform:translateZ(-100px);
+			}
+			li:nth-child(6){
+				background-color:rgba(234,45,36,.5);
+				transform: translateZ(100px);
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+		</ul>
+		
+	</body>
+</html>
